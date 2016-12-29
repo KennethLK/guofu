@@ -1,0 +1,29 @@
+<html>
+<head>
+<!-- 存储服务 -->
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.3.js"></script>
+</head>
+<body>
+<script>
+
+var APP_ID = 'gIL2rcVVyPfQtxthlKcpXcAG-gzGzoHsz';
+
+var APP_KEY = 'e1KGrt640HmLP9h0Fzx21CP4';
+
+AV.init({
+	appId: APP_ID,
+	appKey: APP_KEY	
+});
+
+var obj = AV.Object.extend('TestObject');
+var testObject = new TestObject();
+testObject.save({
+	testabc: 'abc123'
+}).then(function() {
+	alert('LeanCloud works');
+}).catch(function(err){
+	alert('error:' + err);
+});
+</script>
+</body>
+</html>
